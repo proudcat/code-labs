@@ -1,0 +1,15 @@
+
+crtn.o:     file format elf32-i386
+
+Disassembly of section .init:
+
+00000000 <.init>:
+   0:	c9                   	leave  
+   1:	c3                   	ret    
+Disassembly of section .fini:
+
+00000000 <.fini>:
+   0:	59                   	pop    %ecx
+   1:	5b                   	pop    %ebx
+   2:	c9                   	leave  
+   3:	c3                   	ret    

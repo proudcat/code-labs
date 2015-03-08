@@ -1,0 +1,31 @@
+# big programmer commands
+
+ld -static crt1.o crti.o crtbeginT.o hello.o -start-group -lgcc -lgcc_eh -lc -end-group crtend.o crtn.o
+
+objcopy -I binary -O elf32-i386 -B i386 dj.gif dj.o
+objdump -ht dj.o
+
+gcc -static SectionMapping.c -o SectionMapping.elf
+
+// p216
+gcc  -shared a.c -o a.so
+gcc -fPIC  -shared b.c -o b.so
+gcc a.c b.so -o a -Xlinker -rpath ./
+
+gcc -fPIC -shared a1.c -o a1.so
+gcc -fPIC -shared a2.c -o a2.so
+gcc -fPIC -shared b1.c a1.so -o b1.so
+gcc -fPIC -shared b2.C a2.so -o b2.so
+gcc main.C b1.so b2.so -o main -fPIC -Xlinker -rpath ./
+
+-ldl ?? can not find -ldl
+---------dubug history
+// p298, link fail
+cpp_obj.cpp need de-optimize to test
+// p343 objdump is different between cygwin and linux
+// p135 has the VC command dir
+
+dd if=/proc/self/mem of=linux-gate.dso bs=4096 skip=1048574 count=1
+objdump -d --start-address=0xffffe000 --stop-address=0xffffe408 linux-gate.dso
+objdump -d --start-address=0xffffe000 --stop-address=0xffffe414 linux-gate.dso
+

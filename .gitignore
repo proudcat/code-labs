@@ -1,0 +1,41 @@
+# c & vc
+*.o
+*.obj
+*.elf
+*.s
+*.i
+*.lib
+*.a
+*.dll
+*.so
+*.so.*
+*.dylib
+*.exe
+*.out
+*.i*86
+*.x86_64
+
+# nodejs
+*.pid
+*.seed
+.lock-wscript
+node_modules
+
+# Visual Studio
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+[Bb]in/
+[Oo]bj/
+*.suo
+*.user
+*.sln.docstates
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+*.pch
+*.log
