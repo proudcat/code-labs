@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "masm", "masm\masm.vcxproj", "{71440F6B-C4A1-436B-ACF9-F1C56FA9ED6F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "overflow", "overflow\overflow.vcxproj", "{62BBD486-BA89-43D7-A06A-98E5ACD6359B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +17,10 @@ Global
 		{71440F6B-C4A1-436B-ACF9-F1C56FA9ED6F}.Debug|Win32.Build.0 = Debug|Win32
 		{71440F6B-C4A1-436B-ACF9-F1C56FA9ED6F}.Release|Win32.ActiveCfg = Release|Win32
 		{71440F6B-C4A1-436B-ACF9-F1C56FA9ED6F}.Release|Win32.Build.0 = Release|Win32
+		{62BBD486-BA89-43D7-A06A-98E5ACD6359B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{62BBD486-BA89-43D7-A06A-98E5ACD6359B}.Debug|Win32.Build.0 = Debug|Win32
+		{62BBD486-BA89-43D7-A06A-98E5ACD6359B}.Release|Win32.ActiveCfg = Release|Win32
+		{62BBD486-BA89-43D7-A06A-98E5ACD6359B}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
