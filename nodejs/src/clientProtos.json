@@ -1,0 +1,197 @@
+{
+  "connector.connectorHandler.userLogin": {
+    "required string userName": 1,
+    "required string password": 2
+  },
+  "connector.connectorHandler.guestLogin": {
+    "required string guestName": 1,
+    "required string deviceId": 2
+  },
+  "connector.connectorHandler.register": {
+    "required string userName": 1,
+    "required string password": 2,
+    "required string deviceId": 3
+  },
+  "hall.hallHandler.createPlayer": {
+    "required string nickName": 1
+  },
+  "hall.hallHandler.reqBattleData": {
+    "required int32 id": 1,
+    "required int32 teamIndex": 2
+  },
+  "hall.hallHandler.reqBattleVerify": {},
+  "hall.hallHandler.reqCastSkill": {
+    "required int32 type": 1,
+    "required string id": 2,
+    "required int32 skill": 3
+  },
+  "message skillList": {
+    "required int32 type": 1,
+    "required string id": 2,
+    "required int32 position": 3,
+    "required int32 randomIndex": 4,
+    "required int32 damage": 5
+  },
+  "hall.hallHandler.reqCalcSkill": {
+    "required int32 type": 1,
+    "required string id": 2,
+    "required int32 skill": 3,
+    "repeated skillList subList": 4
+  },
+  "message buffList": {
+    "required int32 type": 1,
+    "required string id": 2,
+    "required int32 value": 3
+  },
+  "hall.hallHandler.reqBuffEffect": {
+    "optional int32 ownerType": 1,
+    "required string ownerId": 2,
+    "required int32 destType": 3,
+    "required string destId": 4,
+    "required int32 buffId": 5,
+    "optional int32 intakeHp": 6,
+    "repeated buffList crashList": 7,
+    "repeated buffList blastList": 8
+  },
+  "hall.hallHandler.reqBuffEnd": {
+    "required int32 type": 1,
+    "required string id": 2,
+    "required int32 buffId": 3
+  },
+  "hall.hallHandler.reqCallMonster": {
+    "required string id": 1
+  },
+  "message BattleHeroInfo": {
+    "required string hedoId": 1,
+    "required int32 hp": 2
+  },
+  "hall.hallHandler.reqBattleResult": {
+    "required int32 win": 1,
+    "required int32 heroDeadNum": 2,
+    "required int32 monsterDeadNum": 3,
+    "required int32 reward": 4,
+    "optional BattleHeroInfo heroInfo": 5
+  },
+  "hall.hallHandler.reqUseItem": {
+    "required string itemId": 1
+  },
+  "hall.hallHandler.reqEquipEquipment": {
+    "required string heroId": 1,
+    "required string itemId": 2
+  },
+  "hall.hallHandler.reqUnequipEquipment": {
+    "required string heroId": 1,
+    "required int32 type": 2,
+    "required int32 index": 3
+  },
+  "hall.hallHandler.reqEquipSkill": {
+    "required string heroId": 1,
+    "required string skillId": 2
+  },
+  "hall.hallHandler.reqUnequipSkill": {
+    "required string heroId": 1,
+    "required int32 itemType": 2
+  },
+  "hall.hallHandler.reqSellItem": {
+    "required string itemId": 1
+  },
+  "hall.hallHandler.reqEquipIntensify": {
+    "required string equipId": 1,
+    "repeated string items": 2
+  },
+  "hall.hallHandler.reqSkillIntensify": {
+    "required string skillId": 1,
+    "repeated string items": 2
+  },
+  "hall.hallHandler.reqHeroJoinTeam": {
+    "required string heroId": 1,
+    "required int32 teamIndex": 2
+  },
+  "hall.hallHandler.reqHeroChangeTeamPosition": {
+    "required string heroId1": 1,
+    "required int32 teamIndex1": 2,
+    "required string heroId2": 3,
+    "required int32 teamIndex2": 4
+  },
+  "hall.hallHandler.reqHeroJoinTeamReplaceSb": {
+    "required string heroId1": 1,
+    "required string heroId2": 2,
+    "required int32 teamIndex": 3
+  },
+  "hall.hallHandler.reqHeroRebirth": {
+    "required string heroId": 1
+  },
+  "hall.hallHandler.reqSysMailList": {
+    "required int32 page": 1
+  },
+  "hall.hallHandler.reqObjInMail": {
+    "required int32 mailId": 1
+  },
+  "hall.hallHandler.reqDelSysMails": {
+    "repeated int32 mailIds": 1
+  },
+  "hall.hallHandler.reqOpenMail": {
+    "required int32 id": 1
+  },
+  "hall.hallHandler.reqChestsCut": {},
+  "hall.hallHandler.reqOpenChests": {
+    "required int32 id": 1
+  },
+  "hall.hallHandler.reqChooseChests": {
+    "required int32 itemId": 1
+  },
+  "hall.hallHandler.reqBossInfo": {},
+  "hall.hallHandler.reqRefreshBossInfo": {
+    "required int32 buyRefresh": 1
+  },
+  "hall.hallHandler.reqCasksInfo": {},
+  "hall.hallHandler.reqRefreshCasksInfo": {
+    "required int32 buyRefresh": 1
+  },
+  "hall.hallHandler.reqActivity": {
+    "required int32 id": 1,
+    "required int32 again": 2
+  },
+  "hall.hallHandler.reqDebugCreateHero": {
+    "required int32 heroID": 1
+  },
+  "hall.hallHandler.reqDebugAddItem": {
+    "required int32 itemID": 1,
+    "required int32 count": 2
+  },
+  "hall.hallHandler.reqBuyItem": {
+    "required int32 id": 1
+  },
+  "hall.hallHandler.reqHeroEvolute": {
+    "required string heroId": 1
+  },
+  "hall.hallHandler.reqActivityInfo": {},
+  "hall.hallHandler.reqReceiveGift": {
+    "required int32 activityId": 1,
+    "required int32 giftId": 2
+  },
+  "hall.hallHandler.reqSuggest": {
+    "required string content": 1
+  },
+  "hall.hallHandler.reqNewPlayerGuide": {
+    "required int32 step": 1
+  },
+  "hall.hallHandler.reqActiveCode": {
+    "required string activeCode": 1
+  },
+  "hall.hallHandler.reqSellHero": {
+    "required string heroId": 1
+  },
+  "hall.hallHandler.loadPlayerBaseData": {},
+  "hall.hallHandler.loadPlayerHeroData": {},
+  "hall.hallHandler.loadPlayerItemData": {},
+  "hall.hallHandler.loadPlayerInstanceData": {},
+  "hall.hallHandler.reqEndlessHeroUp": {
+    "required int32 type": 1,
+    "required string heroId": 2
+  },
+  "hall.hallHandler.reqEndlessHeroDown": {
+    "required int32 type": 1,
+    "required string heroId": 2
+  }
+}

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,14 +22,19 @@ namespace Basic
             TARGET      //目标升级的物品
         }
 
+        static string _format24h = "yyyy-MM-dd HH:mm:ss";
+
         static void Main(string[] args)
         {
             //Debug.WriteLine(sizeof(long));
 
             //DateTimeDemo.Test3();
 
-            EventDemo demo = new EventDemo();
-            demo.Test();
+            DateTime date = DateTime.Parse("2015-03-02 00:00:00");
+            DateTime.ParseExact("2015-03-02 00:00:00", _format24h, CultureInfo.InvariantCulture);
+
+            //   EventDemo demo = new EventDemo();
+            //    demo.Test();
 
             Console.ReadKey();
         }

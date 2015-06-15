@@ -1,0 +1,401 @@
+{
+  "message ItemInfo": {
+    "required string id": 1,
+    "required int32 originType": 2,
+    "required int32 atPos": 3,
+    "required int32 count": 4,
+    "required int32 timeLimit": 5,
+    "required int32 dateLimit": 6,
+    "required int32 exp": 7,
+    "required int32 level": 8,
+    "required int32 useTimes": 9,
+    "required int32 expNum": 10
+  },
+  "message STUHeroInfo": {
+    "required string id": 1,
+    "required int32 originType": 2,
+    "required int32 exp": 3,
+    "required int32 grade": 4,
+    "required int32 rebirth": 5,
+    "required string weapon": 6,
+    "required string armor": 7,
+    "required string accessories1": 8,
+    "required string accessories2": 9,
+    "required int32 selectedSkill": 10,
+    "required string skill1": 11,
+    "required string cheats11": 12,
+    "required string cheats12": 13,
+    "required string cheats13": 14,
+    "required string skill2": 15,
+    "required string cheats21": 16,
+    "required string cheats22": 17,
+    "required string skill3": 18,
+    "required string cheats31": 19,
+    "required int32 chips": 20
+  },
+  "message STUBuffTarget": {
+    "required int32 buffId": 1,
+    "required int32 target": 2
+  },
+  "message STUSkillInfo": {
+    "required int32 _id": 1,
+    "required int32 school": 2,
+    "required int32 group": 3,
+    "required int32 level": 4,
+    "required int32 hateFactor": 5,
+    "required int32 preskillGroup": 6,
+    "required int32 areaShape": 7,
+    "required int32 targetRelationship": 8,
+    "required int32 targetNum": 9,
+    "required int32 spreadType": 10,
+    "required int32 castType": 11,
+    "required int32 castTime": 12,
+    "required int32 channelTime": 13,
+    "required int32 energyType": 14,
+    "required int32 energyDataType": 15,
+    "required int32 energyCost": 16,
+    "required int32 costBuffId": 17,
+    "required int32 critFix": 18,
+    "required int32 damageFactor": 19,
+    "required int32 extraDamage": 20,
+    "required int32 targetHpFactor": 21,
+    "required int32 targetLoseHpFactor": 22,
+    "required int32 distribution": 23,
+    "required int32 distributionFactor": 24,
+    "repeated STUBuffTarget buffTarget": 25
+  },
+  "message Broadcast": {
+    "required int32 _id": 1,
+    "required string content": 2,
+    "required int32 startTime": 3,
+    "required int32 endTime": 4,
+    "required int32 interval": 5,
+    "required int32 level": 6,
+    "required int32 state": 7
+  },
+  "message Gift": {
+    "required int32 id": 1,
+    "repeated int32 state": 2
+  },
+  "message Board": {
+    "required int32 _id": 1,
+    "required string title": 2,
+    "required string content": 3
+  },
+  "message UserBaseData": {
+    "required string nickName": 1,
+    "required int32 level": 3,
+    "required int32 exp": 4,
+    "required int32 ap": 5,
+    "required int32 money": 6,
+    "required int32 gold": 7,
+    "required int32 honor": 8,
+    "required int32 backpackNum": 9,
+    "repeated string team1": 10,
+    "repeated string team2": 11,
+    "repeated string team3": 12,
+    "required int32 battleTeam": 13,
+    "required int32 popularity": 17,
+    "repeated Broadcast broadcasts": 18,
+    "repeated Board boards": 19,
+    "repeated Gift gifts": 20,
+    "required int32 days": 21,
+    "required int32 timestamp": 22,
+    "required int32 unSysMailNum": 23,
+    "required int32 step": 24,
+    "required string id": 25,
+    "required int32 toolAttack": 26,
+    "required int32 toolHp": 27,
+    "required int32 apUpdateLeft": 28
+  },
+  "message InstanceRewardInfo": {
+    "required int32 itemType": 1,
+    "required int32 count": 2
+  },
+  "message STUPersonSkillInfo": {
+    "required string heroId": 1,
+    "repeated STUSkillInfo skills": 2
+  },
+  "hall.hallHandler.reqBattleData": {
+    "required int32 code": 1,
+    "required uInt32 serverTime": 2,
+    "repeated STUPersonSkillInfo personSkills": 3,
+    "repeated InstanceRewardInfo rewardInfo": 4,
+    "required int32 ap": 5,
+    "repeated int32 random": 6
+  },
+  "hall.hallHandler.reqBattleResult": {
+    "required int32 code": 1,
+    "required int32 win": 2,
+    "repeated ItemInfo items": 3,
+    "required int32 score": 4
+  },
+  "hall.hallHandler.reqSkillIntensify": {
+    "required int32 code": 1,
+    "required int32 originType": 2,
+    "required int32 exp": 3,
+    "required int32 needMoney": 4
+  },
+  "hall.hallHandler.reqEquipIntensify": {
+    "required int32 code": 1,
+    "required int32 level": 2,
+    "required int32 exp": 3,
+    "required int32 needMoney": 4
+  },
+  "hall.hallHandler.reqHeroRebirth": {
+    "required int32 code": 1,
+    "repeated string costs": 2
+  },
+  "hall.hallHandler.reqHeroJoinTeam": {
+    "required int32 code": 1
+  },
+  "hall.hallHandler.reqHeroChangeTeamPosition": {
+    "required int32 code": 1
+  },
+  "hall.hallHandler.reqHeroJoinTeamReplaceSb": {
+    "required int32 code": 1
+  },
+  "hall.hallHandler.reqEquipEquipment": {
+    "required int32 code": 1,
+    "required int32 timestamp": 2
+  },
+  "hall.hallHandler.reqEquipSkill": {
+    "required int32 code": 1,
+    "required int32 timestamp": 2
+  },
+  "hall.hallHandler.reqUseItem": {
+    "required int32 code": 1,
+    "required int32 timestamp": 2,
+    "optional int32 bagNum": 3,
+    "optional int32 ap": 4,
+    "repeated ItemInfo items": 5,
+    "repeated STUHeroInfo Heroes": 6,
+    "optional int32 money": 7,
+    "optional int32 gold": 8,
+    "optional int32 score": 9
+  },
+  "hall.hallHandler.reqUnequipEquipment": {
+    "required int32 code": 1
+  },
+  "hall.hallHandler.reqUnequipSkill": {
+    "required int32 code": 1
+  },
+  "hall.hallHandler.reqSellItem": {
+    "required int32 code": 1,
+    "required int32 money": 2
+  },
+  "message ServerInfo": {
+    "required int32 id": 1,
+    "required string name": 2,
+    "required int32 state": 3
+  },
+  "connector.connectorHandler.register": {
+    "required int32 code": 1
+  },
+  "connector.connectorHandler.userLogin": {
+    "required int32 code": 1
+  },
+  "connector.connectorHandler.guestLogin": {
+    "required int32 code": 1,
+    "required string guestName": 2
+  },
+  "hall.hallHandler.createPlayer": {
+    "required int32 code": 1,
+    "optional UserBaseData data": 2
+  },
+  "hall.hallHandler.reqDebugCreateHero": {
+    "required int32 code": 1,
+    "optional STUHeroInfo data": 2
+  },
+  "hall.hallHandler.reqDebugAddItem": {
+    "required int32 code": 1,
+    "repeated ItemInfo data": 2
+  },
+  "message sysMailList": {
+    "required int32 id": 1,
+    "required string title": 2,
+    "required string brief": 3,
+    "required string content": 4,
+    "required int32 time": 5,
+    "required string state": 6,
+    "required int32 money": 7,
+    "required int32 gold": 8,
+    "required int32 honor": 9,
+    "required int32 item": 10,
+    "required int32 count": 11
+  },
+  "hall.hallHandler.reqSysMailList": {
+    "required int32 code": 1,
+    "required int32 pageSum": 2,
+    "repeated sysMailList data": 3
+  },
+  "hall.hallHandler.reqObjInMail": {
+    "required int32 code": 1,
+    "repeated ItemInfo items": 2
+  },
+  "hall.hallHandler.reqDelSysMails": {
+    "required int32 code": 1
+  },
+  "message StoreItemInfo": {
+    "required string objId": 1,
+    "required int32 id": 2
+  },
+  "hall.hallHandler.reqUpdateLimitStore": {
+    "required int32 code": 1,
+    "repeated StoreItemInfo data": 2
+  },
+  "hall.hallHandler.reqGetLimitStore": {
+    "required int32 code": 1,
+    "repeated StoreItemInfo data": 2
+  },
+  "onBroadcast": {
+    "required Broadcast broadcast": 1
+  },
+  "hall.hallHandler.reqBossInfo": {
+    "required int32 code": 1,
+    "required int32 timestamp": 2,
+    "required int32 currenttimestamp": 3,
+    "required int32 isPassedInstanceId": 4,
+    "repeated int32 instanceId": 5
+  },
+  "hall.hallHandler.reqCasksInfo": {
+    "required int32 code": 1,
+    "required int32 timestamp": 2,
+    "required int32 currenttimestamp": 3,
+    "required int32 isPassedInstanceId": 4,
+    "repeated int32 instanceId": 5
+  },
+  "hall.hallHandler.reqRefreshBossInfo": {
+    "required int32 code": 1,
+    "required int32 timestamp": 2,
+    "required int32 currenttimestamp": 3,
+    "repeated int32 instanceId": 4
+  },
+  "hall.hallHandler.reqRefreshCasksInfo": {
+    "required int32 code": 1,
+    "required int32 timestamp": 2,
+    "required int32 currenttimestamp": 3,
+    "repeated int32 instanceId": 4
+  },
+  "message RewardInfo": {},
+  "hall.hallHandler.reqActivity": {
+    "required int32 code": 1,
+    "required int32 type": 2,
+    "repeated ItemInfo items": 3,
+    "repeated STUHeroInfo Heroes": 4,
+    "required int32 money": 5,
+    "required int32 gold": 6,
+    "optional int32 orderNum": 7
+  },
+  "hall.hallHandler.reqBuyItem": {
+    "required int32 code": 1,
+    "required int32 money": 2,
+    "required int32 gold": 3,
+    "required int32 honor": 4,
+    "repeated ItemInfo items": 5
+  },
+  "hall.hallHandler.reqOpenChests": {
+    "required int32 code": 1,
+    "repeated ItemInfo items": 2,
+    "repeated STUHeroInfo Heroes": 3,
+    "required int32 money": 4,
+    "required int32 gold": 5,
+    "required int32 score": 6
+  },
+  "hall.hallHandler.reqChooseChests": {
+    "required int32 code": 1,
+    "repeated ItemInfo items": 2
+  },
+  "hall.hallHandler.reqChestsCut": {
+    "required int32 code": 1,
+    "required int32 box1_discount": 2,
+    "required int32 box2_discount": 3,
+    "required int32 box3_discount": 4
+  },
+  "hall.hallHandler.reqHeroEvolute": {
+    "required int32 code": 1,
+    "required int32 money": 2,
+    "required int32 popularity": 3
+  },
+  "message ActivityInfo": {
+    "required int32 id": 1,
+    "required int32 num": 2,
+    "required int32 lastUpdate": 3,
+    "required int32 again": 4
+  },
+  "hall.hallHandler.reqActivityInfo": {
+    "required int32 code": 1,
+    "repeated ActivityInfo data": 2
+  },
+  "onChat": {
+    "required string content": 1
+  },
+  "onSysMailNum": {
+    "required int32 num": 1
+  },
+  "hall.hallHandler.reqReceiveGift": {
+    "required int32 code": 1,
+    "repeated ItemInfo items": 2,
+    "repeated STUHeroInfo heros": 3,
+    "required int32 money": 4,
+    "required int32 gold": 5,
+    "required int32 honor": 6
+  },
+  "hall.hallHandler.reqNewPlayerGuide": {
+    "required int32 code": 1
+  },
+  "hall.hallHandler.reqSuggest": {
+    "required int32 code": 1
+  },
+  "hall.hallHandler.reqActiveCode": {
+    "required int32 code": 1,
+    "optional ItemInfo item": 2
+  },
+  "hall.hallHandler.reqSellHero": {
+    "required int32 code": 1,
+    "required int32 gold": 2
+  },
+  "hall.hallHandler.loadPlayerBaseData": {
+    "required int32 code": 1,
+    "optional UserBaseData data": 2
+  },
+  "hall.hallHandler.loadPlayerHeroData": {
+    "required int32 code": 1,
+    "message UserHeroData": {
+      "repeated STUHeroInfo allHeroes": 1
+    },
+    "optional UserHeroData data": 2
+  },
+  "hall.hallHandler.loadPlayerItemData": {
+    "required int32 code": 1,
+    "message UserItemData": {
+      "repeated ItemInfo items": 1
+    },
+    "optional UserItemData data": 2
+  },
+  "message EndlessHeroList": {
+    "required string id": 1,
+    "required int32 hp": 2,
+    "required int32 pos": 3
+  },
+  "hall.hallHandler.loadPlayerInstanceData": {
+    "required int32 code": 1,
+    "message UserInstanceData": {
+      "message Map": {
+        "required int32 id": 1,
+        "required int32 times": 2,
+        "required int32 score": 3,
+        "required int32 state": 4
+      },
+      "repeated Map battles": 1
+    },
+    "optional UserInstanceData data": 2,
+    "optional EndlessHeroList endlessHeroList": 3
+  },
+  "hall.hallHandler.reqEndlessHeroUp": {
+    "required int32 code": 1
+  },
+  "hall.hallHandler.reqEndlessHeroDown": {
+    "required int32 code": 1
+  }
+}
