@@ -8,6 +8,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Net;
 
 namespace MD5Helper
 {
@@ -35,6 +36,16 @@ namespace MD5Helper
 
         }
 
+        public bool Parse(string host)
+        {
+            IPAddress ipAddress;
+
+            return IPAddress.TryParse(host, out ipAddress);
+            //if (!)
+            //{
+            //    ipAddress = Dns.GetHostEntry(host).AddressList[0];
+            //}
+        }
 
         public Form1()
         {
