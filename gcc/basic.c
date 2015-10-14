@@ -98,7 +98,7 @@ void ptr_demo(){
 
 void oh_shit(){
 	//不加volatile的话 i会输出 10
-	volatile int j = 1;
+	volatile int j = 1; //
 	int i = (++j) + (++j) + (++j);
 	printf("i = %d\n", i);
 }

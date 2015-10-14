@@ -39,3 +39,4 @@ build/
 *.cachefile
 *.pch
 *.log
+packages/

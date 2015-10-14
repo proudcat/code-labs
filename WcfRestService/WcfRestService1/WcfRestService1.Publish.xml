@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\workspace\publish\rest" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="配置文件1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="10/11/2015 19:22:34" />
+    <file relUrl="bin/Index.htm" publishTime="10/11/2015 18:55:01" />
+    <file relUrl="bin/Global.asax.cs" publishTime="10/10/2015 10:22:08" />
+    <file relUrl="Index.htm" publishTime="10/11/2015 18:55:01" />
+    <file relUrl="packages.config" publishTime="10/10/2015 22:56:13" />
+    <file relUrl="bin/Newtonsoft.Json.xml" publishTime="10/10/2015 22:56:11" />
+    <file relUrl="bin/Global.asax" publishTime="10/10/2015 10:22:05" />
+    <file relUrl="bin/WcfRestService1.dll" publishTime="10/11/2015 19:23:30" />
+    <file relUrl="bin/jquery-1.8.3.min.js" publishTime="10/10/2015 23:54:57" />
+    <file relUrl="bin/Web.Release.config" publishTime="10/10/2015 10:22:06" />
+    <file relUrl="bin/json2.js" publishTime="10/10/2015 23:54:57" />
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="10/10/2015 22:56:11" />
+    <file relUrl="jquery-1.8.3.min.js" publishTime="10/10/2015 23:54:57" />
+    <file relUrl="Global.asax" publishTime="10/10/2015 10:22:05" />
+    <file relUrl="bin/Web.config" publishTime="10/11/2015 19:22:34" />
+    <file relUrl="json2.js" publishTime="10/10/2015 23:54:57" />
+    <file relUrl="bin/Web.Debug.config" publishTime="10/10/2015 10:22:06" />
+  </publishProfile>
+</publishData>
