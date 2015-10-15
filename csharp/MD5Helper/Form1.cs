@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using MongoDB.Bson;
-using MongoDB.Driver;
-using MongoDB.Driver.Builders;
+//using MongoDB.Bson;
+//using MongoDB.Driver;
+//using MongoDB.Driver.Builders;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -97,39 +97,39 @@ namespace MD5Helper
 
         private void ChangePassword(string userName, string pwd)
         {
-            var client = new MongoClient(url);
+            //var client = new MongoClient(url);
 
-            var db = client.GetServer().GetDatabase("princessAuth");
-            var collection = db.GetCollection<BsonDocument>("users");
-            var document = collection.Find(Query.EQ("account", userName)).ToList();
+            //var db = client.GetServer().GetDatabase("princessAuth");
+            //var collection = db.GetCollection<BsonDocument>("users");
+            //var document = collection.Find(Query.EQ("account", userName)).ToList();
 
-            if (document.Count > 0)
-            {
-                var user = document[0];
+            //if (document.Count > 0)
+            //{
+            //    var user = document[0];
 
-                if (string.Equals(pwd, user["password"].ToString()))
-                {
-                    string pwd_md5 = HashHelper.GetMd5Hash(pwd);
-                    user["password"] = pwd_md5;
-                    WriteConcernResult result = collection.Update(Query.EQ("_id", user["_id"]), new UpdateDocument(user));
-                    if (result.Ok)
-                    {
-                        MessageBox.Show("修改成功！");
-                    }
-                    else
-                    {
-                        MessageBox.Show("修改失败！");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("密码错误");
-                }
-            }
-            else
-            {
-                MessageBox.Show("无此用户名");
-            }
+            //    if (string.Equals(pwd, user["password"].ToString()))
+            //    {
+            //        string pwd_md5 = HashHelper.GetMd5Hash(pwd);
+            //        user["password"] = pwd_md5;
+            //        WriteConcernResult result = collection.Update(Query.EQ("_id", user["_id"]), new UpdateDocument(user));
+            //        if (result.Ok)
+            //        {
+            //            MessageBox.Show("修改成功！");
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("修改失败！");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("密码错误");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("无此用户名");
+            //}
         }
 
         private void btn_change_pwd_Click(object sender, EventArgs e)

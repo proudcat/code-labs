@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "reflect", "reflect\reflect.csproj", "{882BAC31-F40D-49B9-BD96-87B376B8DE75}"
 EndProject
@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDomainExec", "AppDomainE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Json", "Demo.Json\Demo.Json.csproj", "{AA912B04-9A1D-41A2-AAE6-9E98946DCD02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MD5Helper", "MD5Helper\MD5Helper.csproj", "{B77A00DF-A619-4B5E-B2FB-7BF0BFB508E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypto", "MD5Helper\Crypto.csproj", "{B77A00DF-A619-4B5E-B2FB-7BF0BFB508E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Network", "Network\Network.csproj", "{1F68B6A1-8333-4C19-AC74-D524DE32A395}"
 EndProject

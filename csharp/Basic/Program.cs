@@ -30,11 +30,19 @@ namespace Basic
 
             //DateTimeDemo.Test3();
 
-            DateTime date = DateTime.Parse("2015-03-02 00:00:00");
-            DateTime.ParseExact("2015-03-02 00:00:00", _format24h, CultureInfo.InvariantCulture);
+            //DateTime date = DateTime.Parse("2015-03-02 00:00:00");
+            //DateTime.ParseExact("2015-03-02 00:00:00", _format24h, CultureInfo.InvariantCulture);
 
             //   EventDemo demo = new EventDemo();
             //    demo.Test();
+
+            Uri u = new Uri("http://www.stackoverflow.com/questions/2154167/get-just-the-domain-name-from-a-url");
+
+            string abc = u.GetLeftPart(UriPartial.Authority);
+
+            Console.WriteLine(abc);
+            Console.WriteLine(u.Host.Substring(u.Host.IndexOf(".") + 1));
+            
 
             Console.ReadKey();
         }

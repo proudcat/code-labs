@@ -16,7 +16,7 @@ namespace MD5Helper
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new CryptoTest());
         }
     }
 }
