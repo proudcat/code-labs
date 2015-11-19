@@ -125,3 +125,16 @@ console.log("---------------------- Number --------------------");
 
 var min = 0xFFFF;
 console.log(min);
+
+console.log("---------------------- String --------------------");
+
+//字符串
+var str = "this string \
+is broken \
+across multiple\
+lines."
+console.log(str); // this string is broken across multiplelines.
+
+
+var x = "\u00A9 Netscape Communications";
+console.log(x);

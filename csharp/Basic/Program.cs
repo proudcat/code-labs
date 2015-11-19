@@ -36,13 +36,14 @@ namespace Basic
             //   EventDemo demo = new EventDemo();
             //    demo.Test();
 
-            Uri u = new Uri("http://www.stackoverflow.com/questions/2154167/get-just-the-domain-name-from-a-url");
+            //Uri u = new Uri("http://www.stackoverflow.com/questions/2154167/get-just-the-domain-name-from-a-url");
 
-            string abc = u.GetLeftPart(UriPartial.Authority);
+            //string abc = u.GetLeftPart(UriPartial.Authority);
 
-            Console.WriteLine(abc);
-            Console.WriteLine(u.Host.Substring(u.Host.IndexOf(".") + 1));
-            
+            //Console.WriteLine(abc);
+            //Console.WriteLine(u.Host.Substring(u.Host.IndexOf(".") + 1));
+
+            RegexDemo.Test();
 
             Console.ReadKey();
         }
