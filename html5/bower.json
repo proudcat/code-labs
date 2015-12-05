@@ -1,0 +1,21 @@
+{
+  "name": "yulijun",
+  "homepage": "https://github.com/koalaylj/code-labs",
+  "authors": [
+    "于小懒 <koalaylj@gmail.com>"
+  ],
+  "description": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "~1.8.3",
+    "phaser": "~2.4.4",
+    "javascript-state-machine": "~2.3.5"
+  }
+}

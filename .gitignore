@@ -20,6 +20,7 @@
 *.seed
 .lock-wscript
 node_modules
+bower_components
 
 # Visual Studio
 [Dd]ebug/
@@ -31,6 +32,7 @@ build/
 [Oo]bj/
 *.suo
 *.user
+*.userprefs
 *.sln.docstates
 *.aps
 *.ncb

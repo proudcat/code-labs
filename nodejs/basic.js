@@ -9,6 +9,18 @@ console.log("---------------------- typeof --------------------");
 		同时也可以说是确定一个变量是字符串,数值,布尔值,还是undefined的最佳工具.
 */
 
+var abc = {
+	a:"cccc",
+	b:"bbb"
+};
+
+console.log(abc);
+delete abc.c;
+delete abc["a"];
+console.log(abc);
+
+
+
 var type_str = "zhangqian";
 var type_bool = true;
 var type_number = 10;
