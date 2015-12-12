@@ -161,7 +161,7 @@ var grid_anim = (function () {
 				mask_col.visible = false;
 			}
 		}
-	}
+	};
 })();
 
 function preload() {
@@ -180,8 +180,8 @@ function create() {
 	grid_anim.start();
 
 	// game.input.onDown.add(function () {
-	// 	console.log("stop loop....");
-	// 	grid_anim.stop();
+	// console.log("stop loop....");
+	// grid_anim.stop();
 	// }, this);
 
 }

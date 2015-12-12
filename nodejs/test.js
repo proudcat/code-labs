@@ -1,3 +1,9 @@
+console.log(typeof null);
+console.log(typeof undefined);
+console.log(typeof a);
+var b;
+console.log(typeof b);
+
 /*
 //语法
 function square(number) {
