@@ -1,23 +1,26 @@
 var targetWidth = 800;
 var targetHeight = 600;
 
-//device aspcet ratio
+//device aspcet ratio   暂时没啥卵用
 var deviceRatio = (window.innerWidth / window.innerHeight);
 var newRatio = (targetHeight / targetWidth) * deviceRatio;
 var gameWidth = newRatio * targetWidth;
 var gameHeight = targetHeight;
 
 // var game = new Phaser.Game("100%","100%", Phaser.AUTO, '', {
-var game = new Phaser.Game(1280, 900, Phaser.AUTO, '', {
+var game = new Phaser.Game(1136, 768, Phaser.AUTO, '', {
+	init: init,
 	preload: preload,
-	create: create
+	create: create,
+	update: update,
+	resize: resize,
 });
 
 
 //页面左边那个bitch（各种动画那个小人）
 var bitch = function () {
 
-	//动画帧序列
+	//动画
 	var anim_frames = {
 		rope: "",
 		yeah: "",
@@ -116,7 +119,10 @@ var bitch = function () {
 			break;
 		}
 
-		var anim = sprite.animations.add(name, anim_frames[name], 10, true, false);
+		var anim = sprite.animations.getAnimation(anim_frames[name]);
+		if (anim == null || anim == undefined) {
+			anim = sprite.animations.add(name, anim_frames[name], 10, true, false);
+		}
 
 		if (anim !== undefined && anim !== null) {
 			anim.play(10, false, false);
@@ -170,8 +176,14 @@ var bitch = function () {
 				}
 			});
 		}
-
 	};
+}();
+
+var ui = function () {
+	var button_pos = [
+		[]
+	];
+
 }();
 
 
@@ -251,14 +263,24 @@ var fsm = StateMachine.create({
 	}
 });
 
+function init() {
+
+	game.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+	game.scale.setShowAll();
+	resize();
+}
+
+function update() {
+
+}
+
+function resize() {
+	game.scale.refresh();
+}
+
 function preload() {
-
-	game.load.image('bg', 'assets/bg.png');
-
-	game.load.atlas('rope-yeah', 'assets/rope-yeah.png', 'assets/rope-yeah.json');
-	game.load.atlas('drop', 'assets/drop.png', 'assets/drop.json');
-	game.load.atlas('all', 'assets/all.png', 'assets/all.json'); //bitch dance idle balance lookback
-
+	RES.init(game, CONFIG);
+	RES.loadAll();
 }
 
 function create() {
