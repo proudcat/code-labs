@@ -180,9 +180,99 @@ var bitch = function () {
 }();
 
 var ui = function () {
-	var button_pos = [
-		[]
+
+	var num_btn_pos = [
+	 	[989, 652],
+		[1007, 509],
+		[1007, 789],
+		[989, 481],
+		[989, 816],
+		[1723, 631],
+		[1704, 659],
+		[1704, 715],
+		[1723, 575],
+		[1007, 622],
+		[1007, 681],
+		[989, 539],
+		[989, 762],
+		[1704, 491],
+		[1723, 803],
+		[989, 594],
+		[989, 707],
+		[1723, 519],
+		[1704, 775],
+		[1007, 735],
+		[1007, 565],
+		[1704, 603],
+		[1723, 689],
+		[1704, 547],
+		[1723, 743]
 	];
+
+	var num_btn_tex_names = [
+		"image 454",
+		"image 456",
+		"image 458",
+		"image 460",
+		"image 462",
+		"image 464",
+		"image 466",
+		"image 468",
+		"image 470",
+		"image 472",
+		"image 474",
+		"image 476",
+		"image 478",
+		"image 480",
+		"image 482",
+		"image 484",
+		"image 486",
+		"image 488",
+		"image 490",
+		"image 492",
+		"image 494",
+		"image 496",
+		"image 498",
+		"image 500",
+		"image 502"
+	];
+
+	var num_buttons = [];
+
+	var create_buttons = function () {
+		// var
+		for (var i = 0; i < num_btn_tex_names.length; i++) {
+			var pos = num_btn_pos[i];
+			var button = game.add.button(pos[0] - 825, pos[1] - 300, "ui", numb_button_click, this, "image 454",
+				num_btn_tex_names[i]);
+			button.name = i;
+			button.scale.setTo(0.7);
+
+			var text = game.make.text(15, 10, i, {
+				font: '20px Arial',
+				align: "center",
+				boundsAlignH: "center",
+				boundsAlignV: "middle"
+			});
+
+			button.addChild(text);
+			num_buttons.push(button);
+		}
+	}
+
+	var numb_button_click = function (sender, pointer) {
+		console.log(sender.name);
+	}
+
+	var create_lines = function () {
+
+	}
+
+	return {
+		init: function () {
+			create_buttons();
+		}
+	}
 
 }();
 
@@ -264,7 +354,6 @@ var fsm = StateMachine.create({
 });
 
 function init() {
-
 	game.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
 	game.scale.setShowAll();
 	resize();
@@ -287,6 +376,7 @@ function create() {
 	var bg = game.add.image(this.world.width / 2, this.world.height / 2, 'bg');
 	bg.anchor.setTo(0.5);
 	bitch.init();
+	ui.init();
 	//fsm.start();
 	game.input.onDown.add(function () {
 		bitch.playRope();

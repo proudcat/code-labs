@@ -19,6 +19,11 @@ var CONFIG = (function () {
     bg: {
       "type": "image",
       "texture": "assets/bg.png"
+    },
+    ui: {
+      "type": "atlas",
+      "texture": "assets/ui.png",
+      "atlas": "assets/ui.json"
     }
   };
 
@@ -26,7 +31,7 @@ var CONFIG = (function () {
     {
       "name": "ui",
       "texture": "assets/ui.png",
-      "atlas": "assets/ui.json"
+      "atlas": "assets/ui.json",
       "groups": [{
         "name": "group1",
         "x": 0,
@@ -37,15 +42,12 @@ var CONFIG = (function () {
           "key": "ok",
           "group": "group1",
           "type": "button",
-
-          "args": [
-            "x": 0,
-            "y": 0,
-            "overFrame": 0,
-            "outFrame": 0,
-            "downFrame": 0,
-            "upFrame": 0
-          ]
+          "x": 0,
+          "y": 0,
+          "overFrame": 0,
+          "outFrame": 0,
+          "downFrame": 0,
+          "upFrame": 0
         }, {
           "key": "ok",
           "type": "button",
