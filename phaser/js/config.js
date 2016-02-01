@@ -24,6 +24,11 @@ var CONFIG = (function () {
       "type": "atlas",
       "texture": "assets/ui.png",
       "atlas": "assets/ui.json"
+    },
+    main: {
+      "type": "atlas",
+      "texture": "assets/main.png",
+      "atlas": "assets/main.json"
     }
   };
 

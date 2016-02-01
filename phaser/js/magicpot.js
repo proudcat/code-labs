@@ -138,6 +138,7 @@ var bitch = function () {
 		}
 	};
 
+	var counter = 0;
 
 	//bitch这个闭包的api
 	return {
@@ -181,7 +182,63 @@ var bitch = function () {
 
 var ui = function () {
 
-	var num_btn_pos = [
+	var lines_sprite_names = [
+		"line1",
+		"line2",
+		"line3",
+		"line4",
+		"line5",
+		"line6",
+		"line7",
+		"line8",
+		"line9",
+		"line10",
+		"line11",
+		"line12",
+		"line13",
+		"line14",
+		"line15",
+		"line16",
+		"line17",
+		"line18",
+		"line19",
+		"line20",
+		"line21",
+		"line22",
+		"line23",
+		"line24",
+		"line25"
+	];
+
+	var lines_pos = [
+		[0, -18],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0]
+	];
+
+	var buttons_pos = [
 	 	[989, 652],
 		[1007, 509],
 		[1007, 789],
@@ -209,58 +266,119 @@ var ui = function () {
 		[1723, 743]
 	];
 
-	var num_btn_tex_names = [
-		"image 454",
-		"image 456",
-		"image 458",
-		"image 460",
-		"image 462",
-		"image 464",
-		"image 466",
-		"image 468",
-		"image 470",
-		"image 472",
-		"image 474",
-		"image 476",
-		"image 478",
-		"image 480",
-		"image 482",
-		"image 484",
-		"image 486",
-		"image 488",
-		"image 490",
-		"image 492",
-		"image 494",
-		"image 496",
-		"image 498",
-		"image 500",
-		"image 502"
+	var buttons_text_name = [
+		"num1",
+		"num2",
+		"num3",
+		"num4",
+		"num5",
+		"num6",
+		"num7",
+		"num8",
+		"num9",
+		"num10",
+		"num11",
+		"num12",
+		"num13",
+		"num14",
+		"num15",
+		"num16",
+		"num17",
+		"num18",
+		"num19",
+		"num20",
+		"num21",
+		"num22",
+		"num23",
+		"num24",
+		"num25"
+	]
+
+	var buttons_sprite_name = [
+		"button1",
+		"button2",
+		"button3",
+		"button4",
+		"button5",
+		"button6",
+		"button7",
+		"button8",
+		"button9",
+		"button10",
+		"button11",
+		"button12",
+		"button13",
+		"button14",
+		"button15",
+		"button16",
+		"button17",
+		"button18",
+		"button19",
+		"button20",
+		"button21",
+		"button22",
+		"button23",
+		"button24",
+		"button25"
 	];
 
 	var num_buttons = [];
+	var lines = [];
 
 	var create_buttons = function () {
+		// console.log('centerX', this.game.world.centerX);
+		// console.log('centerY', this.game.world.centerY);
 		// var
-		for (var i = 0; i < num_btn_tex_names.length; i++) {
-			var pos = num_btn_pos[i];
-			var button = game.add.button(pos[0] - 825, pos[1] - 300, "ui", numb_button_click, this, "image 454",
-				num_btn_tex_names[i]);
-			button.name = i;
+		for (var i = 0; i < buttons_sprite_name.length; i++) {
+			var pos = buttons_pos[i];
+			var button = game.add.button(pos[0] - this.game.world.centerX - 240, pos[1] - this.game.world.centerY + 100,
+				"main", num_button_click, this,
+				"image 454",
+				buttons_sprite_name[i]);
+			button.name = (i + 1);
 			button.scale.setTo(0.7);
+			button.anchor.setTo(0.5);
 
-			var text = game.make.text(15, 10, i, {
-				font: '20px Arial',
-				align: "center",
-				boundsAlignH: "center",
-				boundsAlignV: "middle"
-			});
+			var text = game.add.sprite(0, 0, "main", buttons_text_name[i]);
+			text.anchor.setTo(0.5);
+
+			var line = game.add.sprite(this.game.world.centerX - 25, this.game.world.centerY + lines_pos[i][1], "main",
+				lines_sprite_names[i]);
+			line.scale.setTo(0.65);
+			line.anchor.setTo(0.5);
+			line.visible = false;
+			lines.push(line);
+
+
+
+			// var text = game.make.text(15, 10, i, {
+			// 	font: '20px Arial',
+			// 	align: "center",
+			// 	boundsAlignH: "center",
+			// 	boundsAlignV: "middle"
+			// });
 
 			button.addChild(text);
+			//button.addChild(line);
+
+			// game.add.sprite(this.game.world.centerX, this.game.world.centerY, "main", "button1");
+
+
+			//hover
+			button.onInputOver.add(function (sprite, pointer) {
+				console.log('hover');
+			}, this);
+
+			//out
+			button.onInputOut.add(function (sprite, pointer) {
+				console.log('out');
+			}, this);
+
 			num_buttons.push(button);
 		}
 	}
 
-	var numb_button_click = function (sender, pointer) {
+	var num_button_click = function (sender, pointer) {
 		console.log(sender.name);
 	}
 
@@ -268,9 +386,31 @@ var ui = function () {
 
 	}
 
+	var counter = 0;
+
 	return {
 		init: function () {
 			create_buttons();
+			lines[0].visible = true;
+			game.time.events.loop(400, function () {
+
+				return;
+
+				//test
+				for (var i = 0; i < lines.length; i++) {
+					lines[i].visible = false;
+				}
+
+				lines[counter].visible = true;
+
+				counter++;
+				if (counter >= lines.length) {
+					counter = 0;
+				}
+
+			}, this);
+
+
 		}
 	}
 
@@ -329,11 +469,17 @@ var fsm = StateMachine.create({
 
 		},
 
-		onshowResult: function (event, from, to) {},
+		onshowResult: function (event, from, to) {
 
-		onautoScroll: function (event, from, to) {},
+		},
 
-		onshowReward: function (event, from, to) {},
+		onautoScroll: function (event, from, to) {
+
+		},
+
+		onshowReward: function (event, from, to) {
+
+		},
 
 		onrewardBack: function (event, from, to) {
 
@@ -373,8 +519,9 @@ function preload() {
 }
 
 function create() {
-	var bg = game.add.image(this.world.width / 2, this.world.height / 2, 'bg');
+	var bg = game.add.image(this.world.centerX, this.world.centerY, 'bg');
 	bg.anchor.setTo(0.5);
+
 	bitch.init();
 	ui.init();
 	//fsm.start();

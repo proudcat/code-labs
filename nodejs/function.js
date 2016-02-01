@@ -87,7 +87,7 @@ var bind_person = {
     sayHello: function() {
         return 'Hi, I am ' + this.name + ', a ' + this.job;
     }
-}
+};
 
 console.log(bind_person.sayHello());
 //Hi, I am Andrew, a web front end developer
@@ -159,11 +159,11 @@ function caller_CallLevel() {
     } else {
         console.log("CallLevel was called by another function:\n" + caller_CallLevel.caller);
     }
-};
+}
 
 function caller_funCaller() {
     caller_CallLevel();
-};
+}
 
 //caller_CallLevel();
 
@@ -182,7 +182,7 @@ console.log("---------------------- callee --------------------");
 // callee可以打印其本身
 function calleeDemo() {
     console.log(arguments.callee);
-};
+}
 
 // 用于验证参数
 function calleeLengthDemo(arg1, arg2) {
@@ -193,7 +193,7 @@ function calleeLengthDemo(arg1, arg2) {
         console.log("实参长度：" + arguments.length);
         console.log("形参长度： " + arguments.callee.length);
     }
-};
+}
 
 //递归计算
 var sum = function(n) {

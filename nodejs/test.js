@@ -1,8 +1,17 @@
-console.log(typeof null);
-console.log(typeof undefined);
-console.log(typeof a);
-var b;
-console.log(typeof b);
+// console.log(typeof null);
+// console.log(typeof undefined);
+// console.log(typeof a);
+// var b;
+// console.log(typeof b);
+
+
+
+var a = "000000";
+var b = 0;
+
+console.log(a == b);
+console.log(b != a); //false
+console.log(a === b);
 
 /*
 //语法
@@ -36,7 +45,7 @@ var pet = function(name) {          // The outer function defines a variable cal
       return getName;               // Return the inner function, thereby exposing it to outer scopes
     },
     myPet = pet("Vivie");
-    
+
 myPet();                            // Returns "Vivie"
 
 
@@ -44,20 +53,20 @@ myPet();                            // Returns "Vivie"
 
 var createPet = function(name) {
   var sex;
-  
+
   return {
     setName: function(newName) {
       name = newName;
     },
-    
+
     getName: function() {
       return name;
     },
-    
+
     getSex: function() {
       return sex;
     },
-    
+
     setSex: function(newSex) {
       if(typeof newSex == "string" && (newSex.toLowerCase() == "male" || newSex.toLowerCase() == "female")) {
         sex = newSex;
@@ -78,7 +87,7 @@ pet.getName();                  // Oliver
 
 var getCode = (function(){
   var secureCode = "0]Eal(eh&2";    // A code we do not want outsiders to be able to modify...
-  
+
   return function () {
   	console.log("getCode.....");
     return secureCode;
@@ -182,7 +191,7 @@ myArray = myArray.slice(1, 4); // starts at index 1 and extracts all elements  u
 
 var myArray = new Array ("1", "2", "3", "4", "5");
 myArray.splice(1, 3, "a", "b", "c", "d"); // myArray is now ["1", "a", "b", "c", "d", "5"]
-  // This code started at index one (or where the "2" was), removed 3 elements there, 
+  // This code started at index one (or where the "2" was), removed 3 elements there,
   // and then inserted all consecutive elements in its place.
 
 var myArray = new Array("Wind", "Rain", "Fire");
@@ -308,7 +317,7 @@ console.log("date:",today.getFullYear());*/
 console.log("-------------------------------");
 
 for (var i = 0; i <= 5; i++) {
-  console.log("i",i);
+  console.log("i", i);
 };
 
-console.log("iiii",i);
+console.log("iiii", i);
