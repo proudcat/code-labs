@@ -2,6 +2,10 @@
  演示最基本的js相关语法与特性
  */
 
+console.log(a,!a);//undefined true
+var b;
+console.log(b,!b);//undefined true
+
 var abc = {
 	a:"cccc",
 	b:"bbb"
@@ -50,7 +54,8 @@ console.log("Date", typeof Date); // "function"
 console.log("Math", typeof Math); // "object"
 console.log("RegExp", typeof RegExp); // "function"
 console.log("string", typeof String); // "function"
-
+console.log("null",typeof null);
+console.log("undefinded",typeof undefined);
 
 console.log("---------------------- instanceof --------------------");
 /*
