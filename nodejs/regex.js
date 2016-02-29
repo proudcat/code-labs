@@ -1,11 +1,22 @@
 /**
  * 正则表达式
  */
+
+var pattern;
+
+
+var shit = /^([\u4E00-\u9FA5A-Za-z0-9_]|[.]|[,]|[，]|[。]|[!,#,！,-,(,),（,）]|[_]|[——][-]){2,50}$/
+//	
+//  
+console.log( /^([0-9]{16,19})$/.test("哈哈"));
+console.log(shit.test("哈哈22"));
+console.log(shit.test("  "));
+
 var is = require('is_js');
 console.log("---------------------- Basic --------------------");
 
 var str="Is this all there is?";
-var pattern = /is/gi;// same to new RegExp
+pattern = /is/gi;// same to new RegExp
 console.log("g   :",str.match(new RegExp("is","g")));
 console.log("gi  :",str.match(new RegExp("is","gi")));
 console.log("    :",str.match(new RegExp("is")));
@@ -13,7 +24,7 @@ console.log("    :",str.match(new RegExp("is")));
 result = pattern.exec(str);
 console.log(result);
 
-console.log("---------------------- Valid --------------------");
+console.log("---------------------- Validation --------------------");
 
 // var passport = /^[0-9a-zA-Z][0-9a-zA-Z_]{4,14}[0-9a-zA-Z]$/; 
 // var name = /^[\u4e00-\u9fa5]+$/; 
@@ -32,8 +43,9 @@ var names = "Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ; Chris Hand ";
 
 var output = ["---------- Original String\n", names + "\n"];
 
-var pattern = /\s*;\s*/;
+pattern = /\s*;\s*/;
 var nameList = names.split(pattern);
+
 pattern = /(\w+)\s+(\w+)/;
 var bySurnameList = [];
 

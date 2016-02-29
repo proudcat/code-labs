@@ -1,0 +1,24 @@
+<!--棋牌电子彩票 带图片游戏列表-->
+<li>
+	<div class="list-img">
+    	<input type="image" gameid="{{GameId}}" src="{{GameImageurl}}" onclick="return playGame(this);"/>
+    </div>
+	
+    <div class="second-layer">             
+        <div class="list-icon">
+        	<input type="image" src="{{icon}}"/>
+        </div>
+        <div class="list-name">
+        	<a href="javascript:;" gameid="{{GameId}}" onclick="return playGame(this);"> {{GameName}} </a>
+        </div>
+	</div>
+
+    <div class="three-layer">
+        <div class="list-bn-start">
+            <input class="button-bg01" gameid="{{GameId}}" type="button" value="立即游戏" onclick="return playGame(this);" />
+        </div>
+        <div class="list-bn-test">
+            <input class="button-bg02" gameid="{{GameId}}" type="button" value="试玩游戏" onclick="return tryPlayGame(this);" />
+        </div>
+    </div>
+</li>

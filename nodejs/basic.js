@@ -8,15 +8,17 @@ console.log("---------------------- typeof --------------------");
 	1. typeof 是一个操作符,主要的目的是检测一个变量是不是基本数据类型的变量,
 		同时也可以说是确定一个变量是字符串,数值,布尔值,还是undefined的最佳工具.
 */
-
+var type_arr = [];
 var type_str = "zhangqian";
 var type_bool = true;
 var type_number = 10;
 var type_d;
 var type_null = null;
-var type_object = new Object();
+var type_object = {};
 var type_func = new Function("5+2");
 var type_date = new Date();
+
+console.log(typeof type_arr);
 
 console.log(type_str, typeof type_str); //"string"
 console.log(type_bool, typeof type_bool); //"number"
