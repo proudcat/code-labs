@@ -9,7 +9,7 @@ function doSomething(callback) {
 	console.log("first");
 	//callback();
 	process.nextTick(callback);
-};
+}
 
 doSomething(function onEnd() {
 	console.log("second");
