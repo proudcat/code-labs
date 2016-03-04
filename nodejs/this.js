@@ -1,4 +1,18 @@
-var another;
+
+function A(){
+  this.print = function(){
+
+  };
+}
+A.prototype.hehe = function(){};
+
+var a = new A();
+var b = new A();
+console.log(a.print == b.print);
+console.log(a.print === b.print);
+
+console.log(a.hehe == b.hehe);
+console.log(a.hehe === b.hehe);
 
 var Chanel = (function () {
 
@@ -49,9 +63,6 @@ var logic = function () {
 
 var shit = new logic();
 shit.login();
-
-
-
 
 var example = {
 

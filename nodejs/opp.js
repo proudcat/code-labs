@@ -24,12 +24,12 @@ var closure = (function () {
 
   function didi() {
     console.log(didi.toString());
-  };
+  }
 
   return {
     hehe: hehe,
     didi: didi
-  }
+  };
 })();
 
 closure.hehe();
@@ -43,7 +43,7 @@ var Luna = function () {
 
   this.say = function () {
     console.log('hi', this.name);
-  }
+  };
 
 };
 
@@ -102,4 +102,4 @@ puke.name = 'xxxx';
 var shit = JSON.parse(JSON.stringify(puke));
 print(puke);
 shit.test.push(88);
-print(shit)
+print(shit);
