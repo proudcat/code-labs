@@ -1,105 +1,79 @@
 console.log(process.versions);
 console.log('⬆️⬆️⬆️⬆️⬆️<version info>⬆️⬆️⬆️⬆️⬆️');
 
-/*********** common util ************/
-var print = function (src) {
-  for (var prop in src) {
-    if (typeof src[prop] !== 'function') {
-      console.log(prop, src[prop]);
-    }
-  }
-  console.log('oooooooooooooooooooo');
-};
-/************** End ****************/
+console.log("-------- prototype ---------");
 
-console.log('----------- 闭包 ---------');
+var Hero = function (name, speed) {
 
-var closure = (function () {
+  this.name = name;
 
-  var age = 10;
+  this.skills = [];
 
-  var hehe = function () {
-    console.log(hehe.toString());
+  this.say = function (words) {
+    console.log(words);
   };
 
-  function didi() {
-    console.log(didi.toString());
+};
+
+Hero.prototype = {
+  walk: function () {
+    console.log("i am walking with speed ", this.speed);
+  },
+
+  skillAt: function (skill, target) {
+    console.log("use skill " + skill + " to " + target);
   }
+};
+
+Hero.prototype.constructor = Hero;
+
+var luna = new Hero();
+var coco = new Hero();
+
+console.log(luna.walk === coco.walk);
+console.log(luna.say === coco.say);
+
+console.log("------- call & apply -------");
+
+var Chanel = (function () {
+
+  var reqLogin = function (msg, cb, context) {
+
+    context = context || this;
+
+    setTimeout(function () {
+
+      var dto = {
+        userMoney: 1000
+      };
+      // cb(dto);
+      cb.call(context, dto);
+
+    }, 1500);
+  };
 
   return {
-    hehe: hehe,
-    didi: didi
+    reqLogin: reqLogin
   };
 })();
 
-closure.hehe();
-closure.didi();
 
-console.log('---------- prototype ----------');
+var Game = function () {
 
-var Luna = function () {
+  this.bet = 10;
 
-  this.nick = 'bitch';
+  this.login = function () {
 
-  this.say = function () {
-    console.log('hi', this.name);
-  };
+    var msg = {
+      userName: "yulijun",
+      password: "123"
+    };
 
-};
-
-Luna.prototype = {
-
-  name: "yueqi",
-
-  print: function () {
-    console.log(this.name);
-  },
-  set: function (name) {
-    this.name = name;
-  }
-};
-
-Luna.prototype.constructor = Luna;
-
-var hero = new Luna();
-hero.set("sb");
-hero.print();
-
-var friend = new Luna();
-friend.set("princess");
-friend.print();
-hero.print();
-
-console.log(hero.print === friend.print);
-console.log(hero.say === friend.say);
-
-
-console.log('---------- object clone ----------');
-
-var GameInfo = function () {
-  this.GameID = 0;
-  this.IsRace = false;
-  this.GameMoney = 0;
-  this.IsReConnectMode = false;
-  this.test = [];
-  this.fish = {
-    hehe: 123,
-    huhu: "hi"
+    Chanel.reqLogin(msg, function (dto) {
+      console.log(this.bet, dto.userMoney);
+    }, this);
   };
 };
 
-GameInfo.prototype = {
-  name: 'kk',
-  clone: function () {}
-};
-GameInfo.prototype.constructor = GameInfo;
-
-var puke = new GameInfo();
-puke.GameID = 13;
-puke.GameMoney = 121354;
-puke.test = [1, 2, 3];
-puke.name = 'xxxx';
-var shit = JSON.parse(JSON.stringify(puke));
-print(puke);
-shit.test.push(88);
-print(shit);
+var game = new Game();
+game.login();
