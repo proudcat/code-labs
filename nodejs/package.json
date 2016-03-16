@@ -2,6 +2,7 @@
   "name": "nodejs-demo",
   "version": "0.1.0",
   "dependencies": {
-    "is_js": "^0.7.4"
+    "is_js": "^0.7.4",
+    "js-base64": "^2.1.9"
   }
 }
