@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Basic
 {
@@ -43,7 +39,9 @@ namespace Basic
             //Console.WriteLine(abc);
             //Console.WriteLine(u.Host.Substring(u.Host.IndexOf(".") + 1));
 
-            RegexDemo.Test();
+            //RegexDemo.Test();
+
+            Console.Write(Math.Sin(Math.PI * 180f / 180f));
 
             Console.ReadKey();
         }

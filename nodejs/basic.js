@@ -1,6 +1,3 @@
-
-
-
 var a = 123;
 var b = null;
 var c;
