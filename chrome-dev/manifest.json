@@ -1,0 +1,8 @@
+{
+  "name": "save-all",
+  "version": "0.1",
+  "description": "save all resource from a page.",
+  "devtools_page": "devtools.html",
+  "background": { "scripts": ["devtools.js"] },
+  "manifest_version": 2
+}

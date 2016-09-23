@@ -1,0 +1,3 @@
+ignored.js
+node_modules/**
+xx/*.js
