@@ -2,8 +2,6 @@ const path = require('path');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
 
-let file = '/Users/koala/work/resources/theme-park/shit/1280x720_main.json';
-
 function save(i, file, data) {
   let base64Data = data.replace(/^data:image\/(png|jpeg);base64,/, "");
   let dir = path.parse(file).dir;
@@ -22,9 +20,12 @@ function save(i, file, data) {
   });
 }
 
-// let c = 'data:image/png;base64,iVBORw0KG,adfasfasdfasdf,data:image/jpeg;base64,iVBORw0KG';
 
-fs.readFile(file, 'utf8', (err, data) => {
+let shit = '/Users/koala/work/resources/theme-park/shit/1280x720_main.json';
+
+// let shit = '/Users/koala/work/resources/theme-park/shit/loaderImages.json';
+
+fs.readFile(shit, 'utf8', (err, data) => {
   if (err) {
     throw err;
   }
@@ -34,7 +35,7 @@ fs.readFile(file, 'utf8', (err, data) => {
   let keys = Object.keys(jsonObj.files);
 
   keys.forEach((e, i) => {
-    let outputFile = path.join(__dirname, "bitch", e + ".png");
+    let outputFile = path.join(__dirname, "main", e + ".png");
     save(i, outputFile, jsonObj.files[e]);
   });
 });
