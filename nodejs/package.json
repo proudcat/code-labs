@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "dependencies": {
     "is_js": "^0.7.4",
-    "js-base64": "^2.1.9"
+    "js-base64": "^2.1.9",
+    "mkdirp": "^0.5.1"
   }
 }
