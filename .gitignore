@@ -42,3 +42,10 @@ build/
 *.pch
 *.log
 packages/
+
+
+#unix network programing v3
+unpv3/Make.defines
+unpv3/Makefile
+unpv3/config.h
+unpv3/config.status

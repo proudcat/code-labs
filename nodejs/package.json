@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-demo",
+  "name": "code-labs",
   "version": "0.1.0",
   "dependencies": {
     "is_js": "^0.7.4",
