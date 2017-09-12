@@ -1,8 +1,7 @@
 #include	"unp.h"
 #include	<time.h>
 
-int
-main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	int					listenfd, connfd;
 	struct sockaddr_in	servaddr;

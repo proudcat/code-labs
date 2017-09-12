@@ -20,7 +20,7 @@
 *.seed
 .lock-wscript
 node_modules
-bower_components
+nodejs/node_modules/
 
 # Visual Studio
 [Dd]ebug/
@@ -45,7 +45,7 @@ packages/
 
 
 #unix network programing v3
-unpv3/Make.defines
-unpv3/Makefile
-unpv3/config.h
-unpv3/config.status
+c/unpv3/Make.defines
+c/unpv3/Makefile
+c/unpv3/config.h
+c/unpv3/config.status
