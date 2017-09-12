@@ -25,9 +25,6 @@ nodejs/node_modules/
 # Visual Studio
 c/vc/[Dd]ebug/
 c/vc/[Rr]elease/
-x64/
-x86/
-build/
 [Bb]in/
 [Oo]bj/
 *.suo
@@ -49,3 +46,4 @@ c/unpv3/Make.defines
 c/unpv3/Makefile
 c/unpv3/config.h
 c/unpv3/config.status
+c/unpv3/build/
