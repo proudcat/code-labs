@@ -23,8 +23,8 @@ node_modules
 nodejs/node_modules/
 
 # Visual Studio
-[Dd]ebug/
-[Rr]elease/
+c/vc/[Dd]ebug/
+c/vc/[Rr]elease/
 x64/
 x86/
 build/
